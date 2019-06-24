@@ -9,6 +9,13 @@ laravel-admin grid-sortable
 composer require laravel-admin-ext/grid-sortable -vvv
 ```
 
+发布静态资源
+
+```shell
+php artisan vendor:publish --provider="Encore\Admin\GridSortable\GridSortableServiceProvider"
+```
+
+
 ## Usage
 
 定义模型
