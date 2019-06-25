@@ -3,6 +3,8 @@ laravel-admin grid-sortable
 
 这个插件可以帮助你通过拖动数据列表的行来进行排序，前端基于[jQueryUI sortable](https://jqueryui.com/sortable/), 后端基于[eloquent-sortable](https://github.com/spatie/eloquent-sortable)
 
+![Kapture 2019-06-25 at 10 14 51](https://user-images.githubusercontent.com/1479100/60064224-50b97080-9732-11e9-8023-431fc6fe81a5.gif)
+
 ## Installation
 
 ```shell
