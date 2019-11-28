@@ -1,8 +1,13 @@
 {
-    "name": "laravel-admin-ext/grid-sortable",
+    "name": "superoryco/grid-sortable",
     "description": "Sort the grid data by drag and drop rows",
     "type": "library",
-    "keywords": ["laravel-admin", "extension", "grid", "sortable"],
+    "keywords": [
+        "laravel-admin",
+        "extension",
+        "grid",
+        "sortable"
+    ],
     "homepage": "https://github.com/laravel-admin-ext/grid-sortable",
     "license": "MIT",
     "authors": [
