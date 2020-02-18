@@ -15,10 +15,12 @@ class SaveOrderBtn extends AbstractTool
 
         $class = str_replace('\\', '\\\\', $class);
 
+        $name = $this->getButtonId();
+
         $script = <<<SCRIPT
 (function () {
     
-    $('.grid-save-order-btn').click(function () {
+    $('#{$name}').click(function () {
 
         $.post('{$route}', {
             _token: $.admin.token,
@@ -45,12 +47,19 @@ SCRIPT;
     {
         $this->script();
 
+        $name = $this->getButtonId();
+
         $text = __('Save order');
 
         return <<<HTML
-<button type="button" class="btn btn-sm btn-info grid-save-order-btn" style="margin-left: 10px;display: none;">
+<button id={$name} type="button" class="btn btn-sm btn-info grid-save-order-btn" style="margin-left: 10px;display: none;">
     <i class="fa fa-save"></i><span class="hidden-xs">&nbsp;&nbsp;{$text}</span>
 </button>
 HTML;
+    }
+
+    private function getButtonId()
+    {
+        return $this->getGrid()->getName() ?: 'grid-save-order-btn';
     }
 }
