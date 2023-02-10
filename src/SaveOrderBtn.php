@@ -14,6 +14,8 @@ class SaveOrderBtn extends AbstractTool
         $class = get_class($this->getGrid()->model()->getOriginalModel());
 
         $class = str_replace('\\', '\\\\', $class);
+        
+        $direction = data_get($this->getGrid()->model()->getOriginalModel()->sortable, 'order_direction', 'asc');
 
         $script = <<<SCRIPT
 (function () {
@@ -24,6 +26,7 @@ class SaveOrderBtn extends AbstractTool
             _token: $.admin.token,
             _model: '{$class}',
             _sort: $(this).data('sort'),
+            _direction: '{$direction}',
         },
         function(data){
         
