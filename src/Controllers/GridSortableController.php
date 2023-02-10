@@ -11,11 +11,13 @@ class GridSortableController extends Controller
     public function sort(Request $request)
     {
         $sorts = $request->get('_sort');
+        $direction = $request->get('_direction');
+        $_sort_method = (strtolower($direction) === 'desc') ? 'sortDesc' : 'sort';
 
         $sorts = collect($sorts)
             ->pluck('key')
             ->combine(
-                collect($sorts)->pluck('sort')->sort()
+                collect($sorts)->pluck('sort')->$_sort_method()
             );
 
         $status     = true;
