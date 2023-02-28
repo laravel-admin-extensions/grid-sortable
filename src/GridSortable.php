@@ -30,7 +30,8 @@ class GridSortable extends Extension
             if (!request()->has($sortName)
                 && $this->model()->eloquent() instanceof Sortable
             ) {
-                $this->model()->ordered();
+                $direction = data_get($this->model()->getOriginalModel()->sortable, 'order_direction', 'asc');
+                $this->model()->ordered($direction);
             }
 
             $this->column($column, ' ')
